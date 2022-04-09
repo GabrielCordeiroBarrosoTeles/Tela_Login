@@ -1,0 +1,89 @@
+<!--Ainda falta alguns ajustes,mais não quer dizer que não seje interesate-->
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        .button {
+          display: inline-block;
+          padding: 15px 25px;
+          font-size: 24px;
+          cursor: pointer;
+          text-align: center;
+          text-decoration: none;
+          outline: none;
+          color: #fff;
+          background-color: #4CAF50;
+          border: none;
+          border-radius: 15px;
+          box-shadow: 0 9px #999;
+        }
+        .button:hover {background-color: #3e8e41}
+        .button:active {
+          background-color: #3e8e41;
+          box-shadow: 0 5px #666;
+          transform: translateY(4px);
+        }
+        </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-5m navbar-dark bg-primary"></nav>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header">
+           <!--Vai mudar a cor do "h1" quando passar o mouse-->
+            <h1 id="demo"></h1>
+            <h2 id="title" onmouseover="mudacor()" onmouseout="voltacor()">Login</h2>
+        </div>
+        <div class="card-body"></div>
+        <label>Nome:</label>
+        <input type="text" id='nome' onkeyup="caixa_alt()" class="form-group" >
+        <label>E-mail:</label>
+        <input type="email" name="email" id="email" onkeyup="caixa_baixa()">
+        <label>Senha:</label>
+        <input type="password"  id="senha" placeholder="Senha">
+        <h1 style=font-size:10px>Senha 12345</h1>
+        <label>Escolha:</label>
+        <select id="senhoridade">
+            <option selected disabled value ="">Selecione</option>
+            <option>Professor</option>
+            <option>Aluno</option>
+            <option>Responsavel</option>
+            <option>Outros...</option>
+        </select>
+        <label>
+            <label>Deseja salvar sua senha?</label>
+            <input type="radio" name="devweeb" id="frontend" checked>Sim
+            <input type="radio" name="devweeb" id="backend">
+            <label>Não</label>
+        </label>
+        <button onclick="enviar()" class="button" style="margin-left: 38%;margin-right: 25%;width: 20%;">Entrar</button>
+        <div class="d-grid gap-2 d-md-block"><br>
+        </div> 
+    </div>
+</div> 
+<script> 
+        function mudacor(){
+          document.getElementById('title').style.color="red"
+        }function voltacor(){
+          document.getElementById('title').style.color="black"
+        }function caixa_alt(){ 
+            var nome=document.getElementById('nome').value;
+            var nome_2=nome.toUpperCase();
+            document.getElementById('nome').value=nome_2
+       }function caixa_baixa(){ 
+            var email=document.getElementById('email').value;
+            var email_2=email.toLowerCase();
+            document.getElementById('email').value=email_2;
+       }function enviar(){ 
+            var senha= document.getElementById("senha").value
+            if(senha=="12345"){
+                document.getElementById("demo"). innerHTML = "Seja Bem-Vindo!!";
+            }else{
+                document.write("Você errou a senha!!") }}
+</script>
+</body>
+</html>
+ 
